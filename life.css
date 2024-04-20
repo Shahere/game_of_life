@@ -45,3 +45,11 @@ td.live {
     background-color: #CC4774;
     border-radius: 10px;
 }
+
+.labelSpeed {
+    color: white;
+}
+
+.actualGameSpeed {
+    color: white;
+}

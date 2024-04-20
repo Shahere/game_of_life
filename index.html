@@ -1,20 +1,26 @@
 <head>
-    <meta charset = "UTF-8" />
+    <meta charset="UTF-8" />
     <title>The Game of Life</title>
-    <link rel="stylesheet" href="life.css">    
+    <link rel="stylesheet" href="life.css">
 </head>
+
 <body>
 
-<div id="gridContainer">
-    
-</div>
+    <div id="gridContainer">
 
-<div class="controls">
-<button id="start"><span>Start</span></button>
-<button id="clear"><span>Clear</span></button>
-<button id="random"><span>Random</span></button>
-</div>
-    
-<script src="code.js"></script>
-    
+    </div>
+
+    <div class="controls">
+        <button id="start"><span>Start</span></button>
+        <button id="clear"><span>Clear</span></button>
+        <button id="random"><span>Random</span></button>
+        <div class="gameSpeed">
+            <input type="range" id="speed" max="500" min="1" name="Game speed">
+            <label for="labelSpeed" class="labelSpeed">Game speed : </label>
+            <p id="actualGameSpeed" class="actualGameSpeed"></p>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
+
 </body>

@@ -1,3 +1,5 @@
+import createGlider from "./forms/glider.js";
+
 var rows = 100;
 var cols = 200;
 
@@ -173,6 +175,7 @@ function startButtonHandler() {
 // run the life game
 function play() {
     computeNextGen();
+    console.log("compute")
 
     if (playing) {
         timer = setTimeout(play, reproductionTime);
@@ -244,29 +247,8 @@ function countNeighbors(row, col) {
     return count;
 }
 
-//Create figures
 function gliderHandler() {
-    let cell = '';
-    for (let i = rows - 3; i != rows; i++) {
-        for (let j = 0; j != 3; j++) {
-            if (i == rows - 3) {
-                cell = document.getElementById(i + "_" + j);
-                cell.setAttribute("class", "live");
-                grid[i][j] = 1;
-            }
-            if (i == rows - 2 && j == 2) {
-                cell = document.getElementById(i + "_" + j);
-                cell.setAttribute("class", "live");
-                grid[i][j] = 1;
-            }
-            if (i == rows - 1 && j == 1) {
-                cell = document.getElementById(i + "_" + j);
-                cell.setAttribute("class", "live");
-                grid[i][j] = 1;
-            }
-        }
-    }
-
+    createGlider(rows, cols, grid)
 }
 
 // Start everything

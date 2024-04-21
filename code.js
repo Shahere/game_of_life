@@ -1,7 +1,8 @@
 import createGlider from "./forms/glider.js";
+import createElement from "./forms/element.js";
 
-var rows = 100;
-var cols = 200;
+var rows = 50;
+var cols = 100;
 
 var playing = false;
 
@@ -113,8 +114,12 @@ function setupControlButtons() {
     var randomButton = document.getElementById("random");
     randomButton.onclick = randomButtonHandler;
 
-    let glider = document.getElementById("glider")
+    let glider = document.getElementById("glider");
     glider.onclick = gliderHandler;
+
+    let spaceship = document.getElementById("spaceship");
+    spaceship.onclick = spaceshipHandler;
+
 }
 
 function randomButtonHandler() {
@@ -248,7 +253,13 @@ function countNeighbors(row, col) {
 }
 
 function gliderHandler() {
+    
     createGlider(rows, cols, grid)
+}
+
+function spaceshipHandler() {
+    let pattern = [[0, 1], [0, 4], [1, 0], [2, 0], [2, 4], [3, 0], [3, 1], [3, 2], [3, 3]]
+    createElement(rows, cols, grid, pattern)
 }
 
 // Start everything

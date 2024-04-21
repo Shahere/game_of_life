@@ -1,5 +1,5 @@
-var rows = 50;
-var cols = 100;
+var rows = 100;
+var cols = 200;
 
 var playing = false;
 
@@ -110,6 +110,9 @@ function setupControlButtons() {
     // button to set random initial state
     var randomButton = document.getElementById("random");
     randomButton.onclick = randomButtonHandler;
+
+    let glider = document.getElementById("glider")
+    glider.onclick = gliderHandler;
 }
 
 function randomButtonHandler() {
@@ -239,6 +242,31 @@ function countNeighbors(row, col) {
         if (grid[row + 1][col + 1] == 1) count++;
     }
     return count;
+}
+
+//Create figures
+function gliderHandler() {
+    let cell = '';
+    for (let i = rows - 3; i != rows; i++) {
+        for (let j = 0; j != 3; j++) {
+            if (i == rows - 3) {
+                cell = document.getElementById(i + "_" + j);
+                cell.setAttribute("class", "live");
+                grid[i][j] = 1;
+            }
+            if (i == rows - 2 && j == 2) {
+                cell = document.getElementById(i + "_" + j);
+                cell.setAttribute("class", "live");
+                grid[i][j] = 1;
+            }
+            if (i == rows - 1 && j == 1) {
+                cell = document.getElementById(i + "_" + j);
+                cell.setAttribute("class", "live");
+                grid[i][j] = 1;
+            }
+        }
+    }
+
 }
 
 // Start everything

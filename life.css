@@ -5,7 +5,6 @@ body {
 
 #gridContainer {
     padding-bottom: 10px;
-    height: 80vh;
 }
 
 table {
@@ -26,9 +25,7 @@ span {
     color: #222;
 }
 
-#start,
-#clear,
-#random {
+.control {
     padding: .75em;
     border-radius: 5px;
     border: none;    
@@ -46,10 +43,6 @@ td.live {
     border-radius: 10px;
 }
 
-.labelSpeed {
-    color: white;
-}
-
-.actualGameSpeed {
+.labelSpeed, .actualGameSpeed, .w{
     color: white;
 }

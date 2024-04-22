@@ -15,9 +15,9 @@
         <button id="clear" class="control"><span>Clear</span></button>
         <button id="random" class="control"><span>Random</span></button>
         <div class="gameSpeed">
-            <input type="range" id="speed" max="500" min="1" name="Game speed">
+            <input type="range" id="speed" max="500" min="1" name="Game speed" oninput="onRangeChange(this.value)">
             <label for="labelSpeed" class="labelSpeed">Game speed : </label>
-            <p id="actualGameSpeed" class="actualGameSpeed"></p>
+            <p id="actualGameSpeed" class="actualGameSpeed"></p> 
         </div>
 
         <div class="figures">
@@ -26,7 +26,11 @@
             <button class="spaceship control" id="spaceship"><span>Spaceship</span></button>
         </div>
     </div>
-
+    <script>
+        function onRangeChange(value) {
+            document.getElementById("actualGameSpeed").innerHTML = value+" ms";
+        }
+    </script>
     <script src="code.js" type="module"></script>
 
 </body>

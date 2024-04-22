@@ -253,12 +253,13 @@ function countNeighbors(row, col) {
 }
 
 function gliderHandler() {
-    createGlider(rows, cols, grid)
+    let pattern = [[0,0],[0,1],[0,2],[1,2],[2,1]]
+    createElement(rows, cols, grid, pattern, [rows-3, 0])
 }
 
 function spaceshipHandler() {
     let pattern = [[0, 1], [0, 4], [1, 0], [2, 0], [2, 4], [3, 0], [3, 1], [3, 2], [3, 3]]
-    createElement(rows, cols, grid, pattern)
+    createElement(rows, cols, grid, pattern, [rows/2, cols-5])
 }
 
 // Start everything

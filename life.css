@@ -46,3 +46,16 @@ td.live {
 .labelSpeed, .actualGameSpeed, .w{
     color: white;
 }
+
+.actualGameSpeed {
+    margin: 0;
+}
+
+.gameSpeedDiv {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.explication {
+    color: white;
+}
